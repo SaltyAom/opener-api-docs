@@ -2,9 +2,12 @@ import { h, Fragment } from 'preact'
 import { useState } from 'preact/hooks'
 
 const Snippet = (props) => {
-    const setSelect = () => {
-        document.getElementById("ghost-textarea").select();
+    const setCopy = () => {
+        document.getElementById(`code-${props.index}`).select();
         document.execCommand("copy");
+        document.getElementById(`code-${props.index}`).blur();
+        if (window.getSelection) {window.getSelection().removeAllRanges();}
+        else if (document.selection) {document.selection.empty();}
     }
 
     return(
@@ -15,13 +18,13 @@ const Snippet = (props) => {
                     <button onClick={() => props.setPreference("fetch")} className="code-heading code-heading-button-right">Fetch</button>
                 </div>
                 <div>
-                    <button className="code-heading-copy" onClick={() => setSelect()}>Copy</button>
+                    <button className="code-heading-copy" onClick={() => setCopy()}>Copy</button>
                 </div>
             </div>
-            <code>
+            <textarea readOnly rows={3} id={`code-${props.index}`}>
                 {props.type === "axios" ? props.axios : null }
                 {props.type === "fetch" ? props.fetch : null }
-            </code>
+            </textarea>
         </Fragment>
     )
 }
@@ -71,6 +74,7 @@ export default () => {
                     .then(data => console.log(data));`}
                     type={type}
                     setPreference={(prefer) => setPreference(prefer)}
+                    index={0}
                 />
                 <h2>On Success</h2>
                 <p>
@@ -133,6 +137,7 @@ export default () => {
                     .then(data => console.log(data));`}
                     type={type}
                     setPreference={(prefer) => setPreference(prefer)}
+                    index={1}
                 />
                 <h2>On success</h2>
                 <p>
@@ -169,6 +174,7 @@ export default () => {
                     .then(data => console.log(data));`}
                     type={type}
                     setPreference={setPreference}
+                    index={2}
                 />
                 <h2>On success</h2>
                 <p>

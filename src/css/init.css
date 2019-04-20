@@ -103,7 +103,7 @@ section > blockquote {
     margin:0; 
 }
 
-section > code {
+section > textarea {
     appearance: none;
     -webkit-appearance: none;
     border:0;
@@ -119,6 +119,7 @@ section > code {
     border-bottom-right-radius: 5px;
     white-space: pre-line;
     word-break: break-word;
+    overflow:hidden;
 }
 
 .code-heading {
