@@ -21,7 +21,7 @@ const Snippet = (props) => {
                     <button className="code-heading-copy" onClick={() => setCopy()}>Copy</button>
                 </div>
             </div>
-            <textarea readOnly rows={3} id={`code-${props.index}`}>
+            <textarea readOnly rows={4} id={`code-${props.index}`}>
                 {props.type === "axios" ? props.axios : null }
                 {props.type === "fetch" ? props.fetch : null }
             </textarea>
