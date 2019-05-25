@@ -1,5 +1,5 @@
 import { h, render } from 'preact'
-import Landing from './component/landing'
+import Landing from './pages/landing'
 
 import './css/init.css'
 

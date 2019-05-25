@@ -53,6 +53,12 @@ section > h2 {
     margin:10px 0;
 }
 
+a {
+    cursor: pointer;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
 section > * > a,
 section > a,
 section > * > * > a,
@@ -244,6 +250,20 @@ section > blockquote {
     color:var(--primary);
     font-size: inherit;
     border-radius: 3px;
+}
+
+#fab {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    width:52px;
+    height:52px;
+    background-color:var(--primary);
+    border-radius:50%;
+    position:fixed;
+    bottom:calc(10px + 6.25vh);
+    right:calc(10px + 6.25vw);
+    box-shadow:0 5px 8px rgba(0,0,0,.375);
 }
 
 @media screen and (max-width: 767.9px){
