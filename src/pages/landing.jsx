@@ -204,7 +204,7 @@ export default () => {
                     setPreference={(prefer) => setPreference(prefer)}
                     index={3}
                 />
-                <Return endPoint="tag/crossdressing/1" />
+                <Return endPoint="tag/crossdressing" />
             </section>
 
             <section id="generate">
