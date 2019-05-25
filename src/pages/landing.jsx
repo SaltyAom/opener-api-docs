@@ -51,7 +51,7 @@ export default () => {
             <section id="what-is">
                 <h1>What is</h1>
                 <p>
-                    Is an API service for fetching data from nhentai as middleware (since nhentai api
+                    Opener API is an API service for fetching data from nhentai as middleware (since nhentai api
                     can only be fetched on a serverside). <br />
                 </p>
                 <p>
@@ -188,6 +188,9 @@ export default () => {
                 </h1>
                 <p>
                     Get doujinshi's tag related. Can be guide by page as second parameter.
+                </p>
+                <p>
+                    There's 25 object per page.
                 </p>
                 <p>
                     * If no page provided, provided page value will be 1
