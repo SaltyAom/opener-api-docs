@@ -96,26 +96,52 @@ export default () => {
 
             <section>
                 <h1>Setup</h1>
-                <p>Using Axios:</p>
-                <div className="code-snippet-container">
-                    <div className="code-snippet">
-                        // With npm <br />
-                        npm install axios --save <br />
-                        <br />
-                        // With yarn <br />
-                        yarn add axios <br />
-                    </div>
-                </div>
-                <p>Using opener-api:</p>
-                <div className="code-snippet-container">
-                    <div className="code-snippet">
-                        // With npm <br />
-                        npm install opener-api --save <br />
-                        <br />
-                        // With yarn <br />
-                        yarn add opener-api <br />
-                    </div>
-                </div>
+                <p>This section will help you setup with your preference method:</p>
+                <Snippet
+                    fetch={`// With fetch
+
+                    No setup require, rely on broweser API.
+                    Old Browser might not support`}
+                    axios={`// With Axios
+                    
+                    Install module:
+
+                    // With npm
+                    npm install axios --save
+                    
+                    // With yarn
+                    yarn add axios
+                    
+                    Import Axios Module:
+
+                    // With import 
+                    import Axios from 'axios'
+                    
+                    // With require 
+                    const Axios = require('axios')
+                    `}
+                    module={`// With opener-api
+                    
+                    Install module:
+                    
+                    // With npm
+                    npm install opener-api --save
+                    
+                    // With yarn
+                    yarn add opener-api
+                    
+                    Import opener-api Module:
+
+                    // With import
+                    import OpenerAPI from 'opener-api'
+                    
+                    // With require 
+                    const OpenerAPI = require('opener-api')
+                    `}
+                    type={type}
+                    setPreference={(prefer) => setPreference(prefer)}
+                    index={999}
+                />
             </section>
 
             <section id="data">
