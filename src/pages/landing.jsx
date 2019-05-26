@@ -86,7 +86,11 @@ export default () => {
                     <li>
                         <a href="#generate">Generate</a>
                     </li>
+                    <li>
+                        <a href="#page">Page</a>
+                    </li>
                 </ul>
+                <p>* Based on 1.3.0 API version</p>
 
             </section>
 
@@ -133,7 +137,7 @@ export default () => {
                     setPreference={(prefer) => setPreference(prefer)}
                     index={0}
                 />
-                <Return endPoint="data/273172" shallow />
+                <Return endPoint="data/273172" />
             </section>
 
             <section id="opengraph">
@@ -238,6 +242,31 @@ export default () => {
                     <li>error: <span className="type">boolean</span></li>
                     <li>dataURL: <span className="type">string</span></li>
                 </ul>
+            </section>
+
+            <section id="image">
+                <h1>
+                    image
+                </h1>
+                <p>
+                    Get pages' image as result.
+                </p>
+                <p>
+                    * If no page provided, will return all pages's image including cover's image.
+                </p>
+                <Snippet
+                    fetch={`fetch('https://opener.now.sh/api/image/:id/:page')
+                    .then(res => res.json())
+                    .then(data => console.log(data.data));`}
+                    axios={`axios('https://opener.now.sh/api/image/:id/:page')
+                    .then(data => console.log(data.data));`}
+                    module={`OpenerAPI.getImage(:id, :page)
+                    .then(data => console.log(data));`}
+                    type={type}
+                    setPreference={(prefer) => setPreference(prefer)}
+                    index={4}
+                />
+                <Return endPoint="image/273172" />
             </section>
 
             <section id="closing">

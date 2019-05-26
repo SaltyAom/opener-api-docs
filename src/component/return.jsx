@@ -38,7 +38,7 @@ const Return = (props) => {
                                     {Object.getOwnPropertyNames(data[name]).map(detail =>
                                         <li>
                                             {detail}: <span className="type">{ typeof(data[name][detail]) }</span>
-                                            { typeof(data[name]) === "object" && !props.shallow ? 
+                                            { typeof(data[name][detail]) === "object" && !props.shallow ? 
                                                 <ul>
                                                     {Object.getOwnPropertyNames(data[name][detail]).map(doc =>
                                                         <li>
