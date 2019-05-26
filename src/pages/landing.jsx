@@ -101,7 +101,17 @@ export default () => {
                     fetch={`// With fetch
 
                     No setup require, rely on broweser API.
-                    Old Browser might not support`}
+
+                    It's not recommended to use fetch on old browser.
+                    Some old Browser might not support.
+                    
+                    Using an Axios is recommended instead.
+                    
+                    But there's also a polyfill for fetch APIwith XMLHttpRequest
+                    
+                    Add this to your <head> tag:
+
+                    <script async src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.0.0/fetch.min.js"></script>`}
                     axios={`// With Axios
                     
                     Install module:
@@ -272,7 +282,7 @@ export default () => {
 
             <section id="image">
                 <h1>
-                    image
+                    Image
                 </h1>
                 <p>
                     Get pages' image as result.
