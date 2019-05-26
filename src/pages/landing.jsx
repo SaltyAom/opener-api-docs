@@ -87,7 +87,7 @@ export default () => {
                         <a href="#generate">Generate</a>
                     </li>
                     <li>
-                        <a href="#page">Page</a>
+                        <a href="#image">Image</a>
                     </li>
                 </ul>
                 <p>* Based on 1.3.0 API version</p>
@@ -123,7 +123,7 @@ export default () => {
                     module={`// With opener-api
                     
                     Install module:
-                    
+
                     // With npm
                     npm install opener-api --save
                     
