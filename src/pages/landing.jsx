@@ -100,7 +100,7 @@ export default () => {
                 <Snippet
                     fetch={`// With fetch
 
-                    No setup require, rely on broweser API.
+                    No setup require, rely on browser API.
 
                     It's not recommended to use fetch on old browser.
                     Some old Browser might not support.
