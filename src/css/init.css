@@ -69,6 +69,7 @@ section > * > * > * > a {
     background-color:transparent;
     border-radius: 3px;
     transition: color .2s ease-out, background-color .2s ease-out;
+    outline:none;
 }
 
 section > * > a:hover, section > * > a:active, section > * > a:focus,
@@ -218,7 +219,6 @@ section > blockquote {
     font-size: 12px;
     padding: 6px 10px;
     cursor: pointer;
-    outline:none;
     margin:0;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
