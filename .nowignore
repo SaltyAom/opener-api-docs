@@ -1,0 +1,6 @@
+.cache
+.next
+dist
+out
+node_modules
+README.node_modules

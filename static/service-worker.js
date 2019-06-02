@@ -1,6 +1,9 @@
 let cacheName = 'v1',
-    filesToCache = [
-  'index.html'
+  filesToCache = [
+  '/_next/static',
+  '/static/css/init.css',
+  '/static/img/fav.png',
+  '/static/img/image.png'
 ];
 
 self.addEventListener('install', evt => {
