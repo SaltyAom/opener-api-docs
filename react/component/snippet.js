@@ -1,5 +1,3 @@
-import { h } from 'preact'
-
 const Snippet = (props) => {
     const setCopy = () => {
         document.getElementById(`code-${props.index}`).select();
@@ -24,9 +22,9 @@ const Snippet = (props) => {
                 {props.type === "axios" ? props.axios.replace(/  /g, "") : null }
                 {props.type === "module" ? props.module.replace(/  /g, "") : null }
             </div>
-            {props.type === "axios" ? <input tabIndex={-1} type="text" value={props.axios.replace(/  /g, "")} id={`code-${props.index}`} style={{opacity:0,position:"absolute"}} /> : null }
-            {props.type === "fetch" ? <input tabIndex={-1} type="text" value={props.fetch.replace(/  /g, "")} id={`code-${props.index}`} style={{opacity:0,position:"absolute"}} /> : null }
-            {props.type === "module" ? <input tabIndex={-1} type="text" value={props.module.replace(/  /g, "")} id={`code-${props.index}`} style={{opacity:0,position:"absolute"}} /> : null }
+            {props.type === "axios" ? <input tabIndex={-1} readOnly type="text" value={props.axios.replace(/  /g, "")} id={`code-${props.index}`} style={{opacity:0,position:"absolute"}} /> : null }
+            {props.type === "fetch" ? <input tabIndex={-1} readOnly type="text" value={props.fetch.replace(/  /g, "")} id={`code-${props.index}`} style={{opacity:0,position:"absolute"}} /> : null }
+            {props.type === "module" ? <input tabIndex={-1} readOnly type="text" value={props.module.replace(/  /g, "")} id={`code-${props.index}`} style={{opacity:0,position:"absolute"}} /> : null }
         </div>
     )
 }

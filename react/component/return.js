@@ -1,5 +1,4 @@
-import { h, Fragment } from 'preact'
-import { useState, useEffect } from 'preact/hooks'
+import { Fragment, useState, useEffect } from 'react'
 import Axios from 'axios'
 
 const Return = (props) => {
@@ -15,33 +14,33 @@ const Return = (props) => {
 
     if(data === "Fetching..."){
         return(
-            <Fragment>
+            <>
                 <h2>Return</h2>
                 <p>* This return value is based on {id}</p>
                 <ul>
                     <li>Fetching...</li>
                 </ul>
-            </Fragment>
+            </>
         )
     } else {
         let arrName = Object.getOwnPropertyNames(data);
         return(
-            <Fragment>
+            <>
                 <h2>Return</h2>
                 <p>* This return value is based on {id}</p>
                 <ul>
-                    {arrName.map(name =>
-                        <Fragment>
+                    {arrName.map((name, index) =>
+                        <Fragment key={index}>
                             <li>{name}: <span className="type">{ typeof(data[name]) }</span></li>
                             { typeof(data[name]) === "object" ? 
                                 <ul>
-                                    {Object.getOwnPropertyNames(data[name]).map(detail =>
-                                        <li>
+                                    {Object.getOwnPropertyNames(data[name]).map((detail,index) =>
+                                        <li key={index}>
                                             {detail}: <span className="type">{ typeof(data[name][detail]) }</span>
                                             { typeof(data[name][detail]) === "object" && !props.shallow ? 
                                                 <ul>
-                                                    {Object.getOwnPropertyNames(data[name][detail]).map(doc =>
-                                                        <li>
+                                                    {Object.getOwnPropertyNames(data[name][detail]).map((doc,index) =>
+                                                        <li key={index}>
                                                             {doc}: <span className="type">{ typeof(data[name][detail][doc]) }</span>
                                                         </li>
                                                     )}
@@ -54,9 +53,17 @@ const Return = (props) => {
                         </Fragment>
                     )}
                 </ul>
-            </Fragment>
+            </>
         )
     }
+}
+
+Return.getInitialProps = async () => {
+    const data = await Axios(`https://opener.now.sh/api/${props.endPoint}`)
+
+    return {
+      data: data
+    };
 }
 
 export default Return
