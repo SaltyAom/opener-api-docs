@@ -16,15 +16,21 @@
                 "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
                 "x-now-cache": "HIT",
                 "cache-control": "s-maxage=604800, max-age=604800",
-                "Accept-Encoding": "br"
+                "Accept-Encoding": "br",
+                "Service-Worker-Allowed": "/"
             },
             "src": "/.*"
         },
         { 
             "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", 
             "headers": { 
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET",
+                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
+                "x-now-cache": "HIT",
                 "cache-control": "immutable,max-age=31536000",
-                "Accept-Encoding": "br"
+                "Accept-Encoding": "br",
+                "Service-Worker-Allowed": "/"
             } 
         },
         {	

@@ -1,12 +1,10 @@
-import { useState, useEffect } from 'react'
-
+mport { Fragment, useState, useEffect } from 'react'
 import Head from 'next/head'
 
 import Snippet from '../react/component/snippet'
 import Return from '../react/component/return'
 
 import '../static/css/init.css'
-import Fav from '../static/img/fav.png'
 
 const Documentation = () => {
     const [type, setType] = useState("axios");
@@ -31,7 +29,9 @@ const Documentation = () => {
     useEffect(() => {
         if ('serviceWorker' in navigator) {
             window.onload = () => {
-                navigator.serviceWorker.register('/static/service-worker.js')
+                navigator.serviceWorker.register('/static/service-worker.js', {
+                    scope: "/"
+                })
                 .then(registration => {
                     console.info('Registered:', registration);
                 }).catch(err => {
@@ -42,33 +42,11 @@ const Documentation = () => {
     }, []);
 
     return(
-        <>
+        <Fragment>
             <Head>
-                <meta httpEquiv="content-type" content="text/html, charset=utf8" />
-                <meta name="viewport" content="width=device-width,initial-scale=1" />
-                <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
                 <title>Opener API</title>
-
-                <meta name="title" content="Opener API"/>
-                <meta name="description" content="Opener API documentation, usage and example"/>
-                <meta name="author" content="aomkirby123"/>
-                <link rel="icon" href={Fav} />
-                <link rel="canonical" href="https://doc.opener.mystiar.com"/>
-
-                <meta property="og:title" content="Opener API"/>
-                <meta property="og:description" content="Opener API documentation, usage and example"/>
-                <meta property='article:author' content="aomkirby123"/>
-                <meta property='og:site_name' content="Mystiar"/>
-                <meta property="og:locale" content="en_US"/>
-                <meta property="og:type" content="website"/>
-                <meta property="og:image" content="https://opener.mystiar.com/assets/app/util/introducing%20opener.jpg"/>
-                <meta property="og:image:width" content="1920"/>
-                <meta property="og:image:height" content="1080"/>
-
-                <link rel="dns-prefetch" href="https://opener.mystiar.com"/>
-                <link rel="dns-prefetch" href="https://github.com/aomkirby123/nhnetai-opener"/>
-                <link rel="dns-prefetch" href="https://github.com/aomkirby123/opener-api"/>
             </Head>
+
             <a aria-label="Floating Action Button: Go to navigation" id="fab" href="#getting-start">
                 <svg id="fab-icon" style={{fill:"#fff"}} xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z"/></svg>
             </a>
@@ -92,13 +70,13 @@ const Documentation = () => {
             <section id="getting-start">
                 <h1>Getting started</h1>
                 <p>
-                    As an RESTful API, Opener API endpoint is at <a href="https://opener.now.sh" target="_blank">opener.now.sh</a>.
+                    As an RESTful API, Opener API endpoint is at <a href="https://opener.now.sh" rel="noreferrer" target="_blank">opener.now.sh</a>.
                 </p>
                 <p>
                     Fetch API or Axios is recommended for fetching data.
                 </p>
                 <p>
-                    Opener API also has module as shorten function for fetching data name <a href="https://www.npmjs.com/package/opener-api" target="_blank">opener-api</a>.
+                    Opener API also has module as shorten function for fetching data name <a href="https://www.npmjs.com/package/opener-api" rel="noreferrer" target="_blank">opener-api</a>.
                 </p>
                 <ul>
                     <li>
@@ -285,7 +263,7 @@ const Documentation = () => {
                     Generate
                 </h1>
                 <p>
-                    Get generate's image of doujinshi, can be used with decrpyt on <a href="https://opener.mystiar.com/drop" target="_blank">opener.mystiar.com/drop</a>
+                    Get generate's image of doujinshi, can be used with decrpyt on <a href="https://opener.mystiar.com/drop" target="_blank" rel="noreferrer">opener.mystiar.com/drop</a>
                 </p>
                 <p>
                     * If no page provided, provided page value will be 1
@@ -330,7 +308,7 @@ const Documentation = () => {
                     .then(data => console.log(data));`}
                     type={type}
                     setPreference={(prefer) => setPreference(prefer)}
-                    index={4}
+                    index={5}
                 />
                 <Return endPoint="image/273172" />
             </section>
@@ -341,11 +319,11 @@ const Documentation = () => {
                     Opener API is free service provided as a bridge to fetching data from NHentai and is open-source.
                 </p>
                 <p>
-                    You can help contribute on <a href="https://github.com/aomkirby123/opener-api">Github</a>.
+                    You can help contribute on <a href="https://github.com/aomkirby123/opener-api" rel="noreferrer">Github</a>.
                 </p>
             </section>
 
-        </>
+        </Fragment>
     )
 }
 

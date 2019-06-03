@@ -98,7 +98,7 @@ ul li {
     font-size: 18px;
 }
 
-ul > ul {
+ul > li > li {
     margin: 5px 0 15px 0;
 }
 
@@ -264,6 +264,15 @@ section > blockquote {
     bottom:calc(10px + 6.25vh);
     right:calc(10px + 6.25vw);
     box-shadow:0 5px 8px rgba(0,0,0,.375);
+}
+
+.hidden-input {
+    position:absolute;
+    opacity:0;
+    left:-64;
+    top:-64;
+    width:64px;
+    height:64px;
 }
 
 @media screen and (max-width: 767.9px){

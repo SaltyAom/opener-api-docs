@@ -3,9 +3,9 @@ const withImages = require('next-images')
 
 module.exports = withCSS(
       withImages({
-          exportPathMap: function () {
+          exportPathMap: () => {
               return {
-              '/': { page: '/' },
+              '/': { page: '/' }
               }
           },
           target: 'serverless',

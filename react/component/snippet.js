@@ -22,9 +22,10 @@ const Snippet = (props) => {
                 {props.type === "axios" ? props.axios.replace(/  /g, "") : null }
                 {props.type === "module" ? props.module.replace(/  /g, "") : null }
             </div>
-            {props.type === "axios" ? <input tabIndex={-1} readOnly type="text" value={props.axios.replace(/  /g, "")} id={`code-${props.index}`} style={{opacity:0,position:"absolute"}} /> : null }
-            {props.type === "fetch" ? <input tabIndex={-1} readOnly type="text" value={props.fetch.replace(/  /g, "")} id={`code-${props.index}`} style={{opacity:0,position:"absolute"}} /> : null }
-            {props.type === "module" ? <input tabIndex={-1} readOnly type="text" value={props.module.replace(/  /g, "")} id={`code-${props.index}`} style={{opacity:0,position:"absolute"}} /> : null }
+            <label className="hidden-input" for={`code-${props.index}`}>Preference</label>
+            {props.type === "axios" ? <input tabIndex={-1} readOnly type="text" value={props.axios.replace(/  /g, "")} id={`code-${props.index}`} className="hidden-input" /> : null }
+            {props.type === "fetch" ? <input tabIndex={-1} readOnly type="text" value={props.fetch.replace(/  /g, "")} id={`code-${props.index}`} className="hidden-input" /> : null }
+            {props.type === "module" ? <input tabIndex={-1} readOnly type="text" value={props.module.replace(/  /g, "")} id={`code-${props.index}`} className="hidden-input" /> : null }
         </div>
     )
 }

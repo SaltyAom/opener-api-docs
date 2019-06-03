@@ -25,7 +25,7 @@ const Return = (props) => {
     } else {
         let arrName = Object.getOwnPropertyNames(data);
         return(
-            <>
+            <Fragment>
                 <h2>Return</h2>
                 <p>* This return value is based on {id}</p>
                 <ul>
@@ -35,8 +35,10 @@ const Return = (props) => {
                             { typeof(data[name]) === "object" ? 
                                 <ul>
                                     {Object.getOwnPropertyNames(data[name]).map((detail,index) =>
-                                        <li key={index}>
-                                            {detail}: <span className="type">{ typeof(data[name][detail]) }</span>
+                                        <Fragment key={index}>
+                                            <li>
+                                                {detail}: <span className="type">{ typeof(data[name][detail]) }</span>
+                                            </li>
                                             { typeof(data[name][detail]) === "object" && !props.shallow ? 
                                                 <ul>
                                                     {Object.getOwnPropertyNames(data[name][detail]).map((doc,index) =>
@@ -46,24 +48,16 @@ const Return = (props) => {
                                                     )}
                                                 </ul>
                                             : null }
-                                        </li>
+                                        </Fragment>
                                     )}
                                 </ul>
                             : null }
                         </Fragment>
                     )}
                 </ul>
-            </>
+            </Fragment>
         )
     }
-}
-
-Return.getInitialProps = async () => {
-    const data = await Axios(`https://opener.now.sh/api/${props.endPoint}`)
-
-    return {
-      data: data
-    };
 }
 
 export default Return
