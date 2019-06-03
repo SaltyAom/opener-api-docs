@@ -2405,7 +2405,7 @@ function (_Document) {
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("meta", {
         property: "og:image",
-        content: "https://api.opener.mystiar.com/static/image.png",
+        content: "https://api.opener.mystiar.com/static/img/image.png",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 30

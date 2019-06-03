@@ -2,16 +2,4 @@ dist/*
 node_modules/*
 .cache/*
 .next/*
-<<<<<<< HEAD
-<<<<<<< HEAD
 yarn-error.log
-=======
-dist/*
-yarn-error.log
-out/*
->>>>>>> 922eda6cb28f9114aae04d6b956b65985f565126
-=======
-dist/*
-yarn-error.log
-out/*
->>>>>>> 922eda6cb28f9114aae04d6b956b65985f565126

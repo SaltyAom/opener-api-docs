@@ -1,4 +1,4 @@
-mport Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 import Fav from '../static/img/fav.png'
 
 class MyDocument extends Document {
