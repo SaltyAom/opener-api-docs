@@ -1,6 +1,7 @@
+/* Next */
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import Fav from '../static/img/fav.png'
 
+/* Page */
 class MyDocument extends Document {
     static async getInitialProps(ctx) {
       const initialProps = await Document.getInitialProps(ctx)
@@ -18,7 +19,7 @@ class MyDocument extends Document {
             <meta name="title" content="Opener API"/>
             <meta name="description" content="Opener API documentation, usage and example"/>
             <meta name="author" content="aomkirby123"/>
-            <link rel="icon" href={Fav} />
+            <link rel="icon" href="/static/img/fav.png" />
             <link rel="canonical" href="https://doc.opener.mystiar.com"/>
 
             <meta property="og:title" content="Opener API"/>

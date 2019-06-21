@@ -1,11 +1,18 @@
-mport { Fragment, useState, useEffect } from 'react'
+/* Preact */
+import { h, Fragment } from 'preact'
+import { useState, useEffect } from 'preact/hooks'
+
+/* Next */
 import Head from 'next/head'
 
-import Snippet from '../react/component/snippet'
-import Return from '../react/component/return'
+/* Component */
+import Snippet from '../component/snippet'
+import Return from '../component/return'
 
+/* CSS */
 import '../static/css/init.css'
 
+/* Page */
 const Documentation = () => {
     const [type, setType] = useState("axios");
     
@@ -47,64 +54,68 @@ const Documentation = () => {
                 <title>Opener API</title>
             </Head>
 
-            <a aria-label="Floating Action Button: Go to navigation" id="fab" href="#getting-start">
+            <a
+                aria-label="Floating Action Button: Go to navigation" 
+                id="fab" 
+                href="#getting-start"
+            >
                 <svg id="fab-icon" style={{fill:"#fff"}} xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z"/></svg>
             </a>
 
-            <a aria-label="Getting start" id="banner" href="#what-is">
-                <h2 id="banner-title">Opener-API</h2>
-                <p id="banner-detail">Opener-API documentation, usage and example</p>
+            <a className="content-link" aria-label="Getting start" id="banner" href="#what-is">
+                <h1 id="banner-title">Opener-API</h1>
+                <p className="content-content" id="banner-detail">Opener-API documentation, usage and example</p>
             </a>
 
-            <section id="what-is">
-                <h1>What is</h1>
-                <p>
+            <section className="content" id="what-is">
+                <h2 className="content-title">What is</h2>
+                <p className="content-content">
                     Opener API is an API service for fetching data from nhentai as middleware (since nhentai api
                     can only be fetched on a serverside). <br />
                 </p>
-                <p>
-                    Opener API is free services and is open-source on <a href="https://github.com/aomkirby123/opener-api">Github</a>.
+                <p className="content-content">
+                    Opener API is free services and is open-source on <a className="content-link" href="https://github.com/aomkirby123/opener-api">Github</a>.
                 </p>
             </section>
 
-            <section id="getting-start">
-                <h1>Getting started</h1>
-                <p>
-                    As an RESTful API, Opener API endpoint is at <a href="https://opener.now.sh" rel="noreferrer" target="_blank">opener.now.sh</a>.
+            <section className="content" id="getting-start">
+                <h2 className="content-title">Getting started</h2>
+                <p className="content-content">
+                    As an RESTful API, Opener API endpoint is at <a className="content-link" href="https://opener.now.sh" rel="noreferrer" target="_blank">opener.now.sh</a>.
                 </p>
-                <p>
+                <p className="content-content">
                     Fetch API or Axios is recommended for fetching data.
                 </p>
-                <p>
-                    Opener API also has module as shorten function for fetching data name <a href="https://www.npmjs.com/package/opener-api" rel="noreferrer" target="_blank">opener-api</a>.
+                <p className="content-content">
+                    Opener API also has module as shorten function for fetching data name <a className="content-link" href="https://www.npmjs.com/package/opener-api" rel="noreferrer" target="_blank">opener-api</a>.
                 </p>
                 <ul>
                     <li>
-                        <a href="#data">Data</a>
+                        <a className="content-link" href="#data">Data</a>
                     </li>
                     <li>
-                        <a href="#open-graph">Open Graph</a>
+                        <a className="content-link" href="#open-graph">Open Graph</a>
                     </li>
                     <li>
-                        <a href="#relate">Relate</a>
+                        <a className="content-link" href="#relate">Relate</a>
                     </li>
                     <li>
-                        <a href="#tag">Tag</a>
+                        <a className="content-link" href="#tag">Tag</a>
                     </li>
                     <li>
-                        <a href="#generate">Generate</a>
+                        <a className="content-link" href="#generate">Generate</a>
                     </li>
                     <li>
-                        <a href="#image">Image</a>
+                        <a className="content-link" href="#image">Image</a>
                     </li>
                 </ul>
-                <p>* Based on 1.3.0 API version</p>
+                <p className="content-content">* Based on 1.3.0 API version</p>
 
             </section>
 
-            <section>
-                <h1>Setup</h1>
-                <p>This section will help you setup with your preference method:</p>
+            <section className="content">
+                <h2 className="content-title">Setup</h2>
+                <p className="content-content">This section will help you setup with your preference method:</p>
                 <Snippet
                     fetch={`// With fetch
 
@@ -162,11 +173,11 @@ const Documentation = () => {
                 />
             </section>
 
-            <section id="data">
-                <h1>
+            <section className="content" id="data">
+                <h2 className="content-title">
                     Data
-                </h1>
-                <p>
+                </h2>
+                <p className="content-content">
                     Get doujinshi's detail can be retrieve from nhentai based on 6 digits code (Actually can be from 1-6 digits).
                 </p>
                 <Snippet
@@ -184,15 +195,15 @@ const Documentation = () => {
                 <Return endPoint="data/273172" />
             </section>
 
-            <section id="opengraph">
-                <h1>
+            <section className="content" id="opengraph">
+                <h2 className="content-title">
                     Open Graph <span className="deprecated">Deprecated</span>
-                </h1>
-                <p>
+                </h2>
+                <p className="content-content">
                     Get doujinshi's opengraph data.
                 </p>
-                <p>
-                    Is deprecated, use <a href="#data">data</a> instead.
+                <p className="content-content">
+                    Is deprecated, use <a className="content-link" href="#data">data</a> instead.
                 </p>
                 <Snippet
                     fetch={`fetch('https://opener.now.sh/api/g/:id')
@@ -208,11 +219,11 @@ const Documentation = () => {
                 />
             </section>
 
-            <section id="relate">
-                <h1>
+            <section className="content" id="relate">
+                <h2 className="content-title">
                     Relate
-                </h1>
-                <p>
+                </h2>
+                <p className="content-content">
                     Retreive 5 most related doujinshi.
                 </p>
                 <Snippet
@@ -230,17 +241,17 @@ const Documentation = () => {
                 <Return endPoint="relate/273172" />
             </section>
 
-            <section id="tag">
-                <h1>
+            <section className="content" id="tag">
+                <h2 className="content-title">
                     Tag
-                </h1>
-                <p>
+                </h2>
+                <p className="content-content">
                     Get doujinshi's tag related. Can be guide by page as second parameter.
                 </p>
-                <p>
+                <p className="content-content">
                     There's 25 object per page.
                 </p>
-                <p>
+                <p className="content-content">
                     * If no page provided, provided page value will be 1
                 </p>
                 <Snippet
@@ -258,14 +269,14 @@ const Documentation = () => {
                 <Return endPoint="tag/crossdressing" />
             </section>
 
-            <section id="generate">
-                <h1>
+            <section className="content" id="generate">
+                <h2 className="content-title">
                     Generate
-                </h1>
-                <p>
-                    Get generate's image of doujinshi, can be used with decrpyt on <a href="https://opener.mystiar.com/drop" target="_blank" rel="noreferrer">opener.mystiar.com/drop</a>
+                </h2>
+                <p className="content-content">
+                    Get generate's image of doujinshi, can be used with decrpyt on <a className="content-link" href="https://opener.mystiar.com/drop" target="_blank" rel="noreferrer">opener.mystiar.com/drop</a>
                 </p>
-                <p>
+                <p className="content-content">
                     * If no page provided, provided page value will be 1
                 </p>
                 <Snippet
@@ -280,7 +291,7 @@ const Documentation = () => {
                     setPreference={(prefer) => setPreference(prefer)}
                     index={4}
                 />
-                <h2>Return</h2>
+                <h3 className="content-return">Return</h3>
                 <ul>
                     <li>success: <span className="type">boolean</span></li>
                     <li>error: <span className="type">boolean</span></li>
@@ -288,14 +299,14 @@ const Documentation = () => {
                 </ul>
             </section>
 
-            <section id="image">
-                <h1>
+            <section className="content" id="image">
+                <h2 className="content-title">
                     Image
-                </h1>
-                <p>
+                </h2>
+                <p className="content-content">
                     Get pages' image as result.
                 </p>
-                <p>
+                <p className="content-content">
                     * If no page provided, will return all pages's image including cover's image.
                 </p>
                 <Snippet
@@ -313,13 +324,13 @@ const Documentation = () => {
                 <Return endPoint="image/273172" />
             </section>
 
-            <section id="closing">
-                <h1>Conclusion</h1>
-                <p>
+            <section className="content" id="closing">
+                <h2 className="content-title">Conclusion</h2>
+                <p className="content-content">
                     Opener API is free service provided as a bridge to fetching data from NHentai and is open-source.
                 </p>
-                <p>
-                    You can help contribute on <a href="https://github.com/aomkirby123/opener-api" rel="noreferrer">Github</a>.
+                <p className="content-content">
+                    You can help contribute on <a className="content-link" href="https://github.com/aomkirby123/opener-api" rel="noreferrer">Github</a>.
                 </p>
             </section>
 

@@ -2,9 +2,13 @@
     "version": 2,
     "name": "opener-api",
     "builds": [
+        { 
+            "src": "static/**/*", 
+            "use": "@now/static" 
+        },
         {
-            "src": "next.config.js", 
-            "use": "@now/next",
+            "src": "server.js", 
+            "use": "@now/node-server",
             "config": { "maxLambdaSize": "50mb" }
         }
     ],
@@ -19,7 +23,8 @@
                 "Accept-Encoding": "br",
                 "Service-Worker-Allowed": "/"
             },
-            "src": "/.*"
+            "src": "/(.*)",
+            "dest": "/server.js"
         },
         { 
             "src": "/_next/static/(?:[^/]+/pages|chunks|runtime)/.+", 
@@ -43,7 +48,6 @@
         }
     ],
     "regions": ["sin1", "sin"],
-    "alias": "api.opener.mystiar.com",
     "github": {
         "enabled": false
     }

@@ -38,7 +38,7 @@ h1,h2,h3,h4,h5,h6,div,span { cursor:default; }
     border-radius: 4px;
 }
 
-section {
+section.content {
     width:700px;
     margin:35px auto 40px auto;
     padding:15px 5%;
@@ -47,22 +47,16 @@ section {
     box-shadow:0 10px 25px rgba(0,0,0,.375);
 }
 
-section > h2 {
+section.content > h2.content-title {
     color:var(--text);
     font-size: 28px;
     margin:10px 0;
 }
 
-a {
+a.content-link {
     cursor: pointer;
     -ms-touch-action: manipulation;
     touch-action: manipulation;
-}
-
-section > * > a,
-section > a,
-section > * > * > a,
-section > * > * > * > a {
     padding: 3px 5px;
     font-size:inherit;
     color:var(--primary);
@@ -72,10 +66,7 @@ section > * > * > * > a {
     outline:none;
 }
 
-section > * > a:hover, section > * > a:active, section > * > a:focus,
-section > a:hover, section > a:active, section > a:focus, 
-section > * > * > a:hover, section > * > * > a:active, section > * > * > a:focus,
-section > * > * > * > a:hover, section > * > * > * > a:active, section > * > * > * > a:focus {
+a.content-link:hover, a.content-link:active {
     background-color:var(--primary);
     color:var(--text);
 }
@@ -149,7 +140,7 @@ span.deprecated {
     color:var(--less);
 }
 
-section > h1 { 
+section.content > h2.content-title { 
     font-size: 3rem;
     color:var(--title);
     border-bottom: 1px solid var(--less);
@@ -158,22 +149,23 @@ section > h1 {
     margin-bottom:15px;
 }
 
-section > h2 { 
+h3.content-return { 
     font-size: 1.75rem;
     padding: 8px; 
+    color:var(--text);
 }
 
-section > p { 
+section.content > p.content-content { 
     font-size: 1.15rem; 
     color:var(--text); 
     line-height: 1.625;
 }
 
-section > br { 
+section.content > br { 
     line-height: 3; 
 }
 
-section > blockquote { 
+section.content > blockquote { 
     font-size: 1.5rem;
     padding: 30px;
     color:var(--primary); 
@@ -252,7 +244,7 @@ section > blockquote {
     border-radius: 3px;
 }
 
-#fab {
+a#fab {
     display:flex;
     justify-content: center;
     align-items:center;
@@ -273,6 +265,10 @@ section > blockquote {
     top:-64;
     width:64px;
     height:64px;
+}
+
+a#banner:hover, a#banner:focus {
+    background-color: unset;
 }
 
 @media screen and (max-width: 767.9px){
