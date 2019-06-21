@@ -17,7 +17,10 @@
     "now-build": "next build",
     "start": "node server.js NODE_ENV=production"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
   "_moduleAliases": {
     "react": "node_modules/preact/compat",
     "react-dom": "node_modules/preact/compat",
